@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game giải đố Puzzle </title>
+</head>
+<body>
+<img id="pic1" onclick="changeIMG1()" src="images/cat1.jpg" height="160" width="800"/>
+<br>
+<img id="pic2" onclick="changeIMG2()" src="images/panda2.jpg" height="160" width="800"/>
+<br>
+<img id="pic3" onclick="changeImg3()" src="images/monkey3.jpg" height="160" width="800"/>
+<br>
+<img id="pic4" onclick="changeImg4()" src="images/monkey4.jpg" height="160" width="800"/>
+<br>
+<img id="pic5" onclick="changeImg5()" src="images/panda5.jpg" height="160" width="800"/>
+
+<script>
+    function changeIMG1() {
+        let img1 = document.getElementById("pic1");
+        if (img1.src.match('monkey')) {
+            img1.src = 'images/panda1.jpg';
+        } else if (img1.src.match('panda')) {
+            img1.src = 'images/cat1.jpg';
+        } else img1.src = 'images/monkey1.jpg';
+
+        if (isCheck()) {
+            alert("Success");
+        }
+    }
+
+    function changeIMG2() {
+        let img2 = document.getElementById('pic2');
+        if (img2.src.match('monkey')) {
+            img2.src = 'images/panda2.jpg';
+        } else if (img2.src.match('panda')) {
+            img2.src = 'images/cat2.jpg';
+        } else img2.src = 'images/monkey2.jpg';
+
+        if (isCheck()) {
+            alert("Success");
+        }
+    }
+
+    function changeImg3() {
+        let img3 = document.getElementById('pic3');
+        if (img3.src.match('monkey')) {
+            img3.src = 'images/panda3.jpg';
+        } else if (img3.src.match('panda')) {
+            img3.src = 'images/cat3.jpg';
+        } else
+            img3.src = 'images/monkey3.jpg';
+
+        if (isCheck()) {
+            alert("Success");
+        }
+    }
+
+    function changeImg4() {
+        let img4 = document.getElementById('pic4');
+        if (img4.src.match('monkey')) {
+            img4.src = 'images/panda4.jpg';
+        } else if (img4.src.match('panda')) {
+            img4.src = 'images/cat4.jpg';
+        } else
+            img4.src = 'images/monkey4.jpg';
+
+        if (isCheck()) {
+            alert("Success");
+        }
+    }
+
+    function changeImg5() {
+        let img5 = document.getElementById('pic5');
+        if (img5.src.match('monkey')) {
+            img5.src = 'images/panda5.jpg';
+        } else if (img5.src.match('panda')) {
+            img5.src = 'images/cat5.jpg';
+        } else img5.src = 'images/monkey5.jpg';
+
+        if (isCheck()) {
+            alert("Success");
+        }
+    }
+
+    function isCheck() {
+
+        let isCheck = false;
+
+        let img1 = document.getElementById('pic1').src.replace(/^.*[\\\/]/, '');
+        let img2 = document.getElementById('pic2').src.replace(/^.*[\\\/]/, '');
+        let img3 = document.getElementById('pic3').src.replace(/^.*[\\\/]/, '');
+        let img4 = document.getElementById('pic4').src.replace(/^.*[\\\/]/, '');
+        let img5 = document.getElementById('pic5').src.replace(/^.*[\\\/]/, '');
+        let image1Name = img1.substr(0, img1.length - 5);
+        let image2Name = img2.substr(0, img2.length - 5);
+        let image3Name = img3.substr(0, img3.length - 5);
+        let image4Name = img4.substr(0, img4.length - 5);
+        let image5Name = img5.substr(0, img5.length - 5);
+        if (image1Name == image2Name && image2Name == image3Name && image3Name == image4Name && image4Name == image5Name) {
+            isCheck = true;
+        }else {
+            isCheck = false;
+        }
+        return isCheck;
+    }
+
+
+</script>
+</body>
+</html>
